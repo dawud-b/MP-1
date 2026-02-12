@@ -2,7 +2,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ppm_package.vhd
+use ppm_package.all;
 
 
 entity ppm_gen is
