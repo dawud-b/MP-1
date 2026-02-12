@@ -11,7 +11,7 @@ entity ppm_cap is
           rst_i   : in std_logic;
           en_i    : in std_logic;
           ppm_i   : in std_logic;
-          done_o  : out std_logic; -- done flag
+          done_o  : out std_logic; -- done flag, increments slv_reg1
           data_o  : out chan_bus_t
         );
 end ppm_cap;
@@ -19,7 +19,7 @@ end ppm_cap;
 architecture ppm of ppm_cap is
   signal cur_chan : std_logic_vector(2 downto 0); -- channel counter (0 indexed)
   signal cycles   : std_logic_vector(31 downto 0); -- cycle counter
-
+  
   type state_t is (IDLE, PULSE, GAP, DATA_OUT);
   signal state, nstate : state_t;
 
@@ -42,6 +42,7 @@ begin
     case state is
       
       when IDLE =>
+        done_o <= '0';
         cycles <= x"000000000";
         cur_chan <= "000";
         if (ppm_i = '1') then
@@ -52,17 +53,25 @@ begin
       
       when PULSE =>
         cycles <= x"000000000";
-        if (ppm_i = '0')
+        if (ppm_i = '0') then
           state <= GAP;
         else
           state <= PULSE;
         end if;
       
       when GAP =>
-        if (ppm_i = '0')
-
+        if (ppm_i = '0') then
+          state <= GAP;
+        else
+          data_o(cur_chan) <= cycles;
+          cur_chan <= cur_chan + 1;
+          if (cur_chan >= 6) then
+            done_o <= '1';
+            state <= IDLE;
+          else
+            state <= PULSE;
+          end if;
         end if;
-    
     end case;
   end process comb_proc;
 end ppm;
