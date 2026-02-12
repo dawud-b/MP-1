@@ -1,2 +1,3 @@
 # MP-1
-4880 MP-1: QUAD UAV
+
+Custom Vivado IP for Quadcopter PPM communication.
