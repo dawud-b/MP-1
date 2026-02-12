@@ -1,3 +1,5 @@
+library ieee;
+use ieee.std_logic_1164.all;
 
 package ppm_package is
   -- six channels, 32 bits each
