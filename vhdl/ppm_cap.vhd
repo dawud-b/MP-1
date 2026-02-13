@@ -25,7 +25,7 @@ architecture ppm of ppm_cap is
   
   type state_t is (IDLE, PULSE, GAP, DATA_OUT);
   signal state : state_t;
-  
+
   signal data_s : chan_bus_t;
   signal done_s : std_logic;
 
@@ -52,9 +52,9 @@ begin
           cycles <= x"00000000";
           cur_chan <= "000";
           if (ppm_i = '1') then
-            state <= PULSE;
-          else
             state <= IDLE;
+          else
+            state <= GAP; -- go to gap once ppm is low
           end if;
         
         when PULSE =>
@@ -71,15 +71,14 @@ begin
             state <= GAP;
           else
             data_s(to_integer(unsigned(cur_chan))) <= cycles;
-            cur_chan <= cur_chan + 1;
-            if (cur_chan >= 5) then
+            if (cur_chan = 5) then
               done_s <= '1';
               state <= IDLE;
             else
+              cur_chan <= cur_chan + 1;
               state <= PULSE;
             end if;
           end if;
-
       end case;
 
     end if;
