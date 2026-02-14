@@ -592,7 +592,7 @@ begin
                             if (capture_channel_counter = x"6") then
                                 capture_channel_counter <= (others => '0');
                                 capture_state <= IDLE;
-                                s_channel_count_registers <= s_channel_count_frame_save;
+                                s_channel_count_registers <= s_channel_count_frame_save; -- save all counts to registers simulatenously so a read from one channel doesn't get values from an old frame while a read from another channel right after gets values from a in progress frame
                                 slv_reg1 <= std_logic_vector(unsigned(slv_reg1) + 1);
                             end if;
                             
@@ -612,6 +612,15 @@ begin
                         
                     when others =>
                 end case;
+                -- If we are in a pulse or gap that is longer than, lets say, 5 ms, then we assume we had lost sync and lock and that we
+                -- have now hit the true idle state
+                -- 500 cycles = 5 ms assuming 100 MHz clock
+                if (capture_counter = std_logic_vector(to_unsigned(500, capture_counter'length)) and capture_state /= IDLE) then
+                    s_channel_count_registers <= (others => (others => '0'));
+                    s_channel_count_frame_save <= (others => (others => '0'));
+                    capture_state <= IDLE;
+                end if;
+                
             end if;
         end if;
     end process;
