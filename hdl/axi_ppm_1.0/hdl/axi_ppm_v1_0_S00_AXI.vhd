@@ -566,6 +566,9 @@ begin
     
     process(S_AXI_ACLK) begin
         if (rising_edge(S_AXI_ACLK)) then
+            
+            capture_counter <= std_logic_vector(unsigned(capture_counter) + 1); -- count by default so you can do sync detection and correction
+            
             if (S_AXI_ARESETN = '0') then
                 capture_state <= IDLE;
                 capture_counter <= (others => '0');
@@ -614,8 +617,8 @@ begin
                 end case;
                 -- If we are in a pulse or gap that is longer than, lets say, 5 ms, then we assume we had lost sync and lock and that we
                 -- have now hit the true idle state
-                -- 500 cycles = 5 ms assuming 100 MHz clock
-                if (capture_counter = std_logic_vector(to_unsigned(500, capture_counter'length)) and capture_state /= IDLE) then
+                -- 500 kCycles = 5 ms assuming 100 MHz clock
+                if (capture_counter = std_logic_vector(to_unsigned(500000, capture_counter'length)) and capture_state /= IDLE and ppm_input = '1') then
                     s_channel_count_registers <= (others => (others => '0'));
                     s_channel_count_frame_save <= (others => (others => '0'));
                     capture_state <= IDLE;
