@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Feb 17 10:52:23 2026
--- Host        : CO2041-06 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_auto_pc_0/MP1BD_auto_pc_0_stub.vhdl
+-- Date        : Tue Feb 17 18:32:30 2026
+-- Host        : CO2041-09 running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub -rename_top MP1BD_auto_pc_0 -prefix
+--               MP1BD_auto_pc_0_ MP1BD_auto_pc_0_stub.vhdl
 -- Design      : MP1BD_auto_pc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

@@ -557,12 +557,12 @@ begin
 	
     ppm_output <= ppm_input when slv_reg0(0) = '0' else s_ppm_generate_output;
     
-    s_channel_count_registers(0) <= slv_reg10;
-    s_channel_count_registers(1) <= slv_reg11;
-    s_channel_count_registers(2) <= slv_reg12;
-    s_channel_count_registers(3) <= slv_reg13;
-    s_channel_count_registers(4) <= slv_reg14;
-    s_channel_count_registers(5) <= slv_reg15;
+    slv_reg10 <= s_channel_count_registers(0);
+    slv_reg11 <= s_channel_count_registers(1);
+    slv_reg12 <= s_channel_count_registers(2);
+    slv_reg13 <= s_channel_count_registers(3);
+    slv_reg14 <= s_channel_count_registers(4);
+    slv_reg15 <= s_channel_count_registers(5);
     
     process(S_AXI_ACLK) begin
         if (rising_edge(S_AXI_ACLK)) then
@@ -617,7 +617,7 @@ begin
                 -- If we are in a pulse that is longer than, lets say, 5 ms, then we assume we had lost sync and lock and that we
                 -- have now hit the true idle state
                 -- 500 kCycles = 5 ms assuming 100 MHz clock
-                if (capture_counter = std_logic_vector(to_unsigned(500000, capture_counter'length)) and capture_state /= IDLE and ppm_input = '1') then
+                if (capture_counter = std_logic_vector(to_unsigned(500000, capture_counter'length)) and capture_state /= IDLE) then
                     s_channel_count_registers <= (others => (others => '0'));
                     s_channel_count_frame_save <= (others => (others => '0'));
                     capture_state <= IDLE;

@@ -94,7 +94,7 @@ set_property ip_output_repo c:/Users/zfsalti/488/MP-1/hw/hw.cache/ip [current_pr
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0.xci
+read_ip -quiet C:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0_ooc.xdc]

@@ -93,7 +93,7 @@ set_property ip_output_repo c:/Users/zfsalti/488/MP-1/hw/hw.cache/ip [current_pr
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_axi_ppm_0_1/MP1BD_axi_ppm_0_1.xci
+read_ip -quiet C:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_axi_ppm_0_1/MP1BD_axi_ppm_0_1.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
