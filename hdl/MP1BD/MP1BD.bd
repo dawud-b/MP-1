@@ -17,8 +17,8 @@
         }
       },
       "rst_ps7_0_100M": "",
-      "system_ila_0": "",
-      "axi_ppm_0": ""
+      "axi_ppm_0": "",
+      "system_ila_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1115,100 +1115,31 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "MP1BD_rst_ps7_0_100M_0"
       },
+      "axi_ppm_0": {
+        "vlnv": "iastate.edu:user:axi_ppm:1.0",
+        "xci_name": "MP1BD_axi_ppm_0_1"
+      },
       "system_ila_0": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "MP1BD_system_ila_0_0",
+        "xci_name": "MP1BD_system_ila_0_1",
         "parameters": {
-          "ALL_PROBE_SAME_MU": {
-            "value": "true"
-          },
-          "ALL_PROBE_SAME_MU_CNT": {
-            "value": "3"
-          },
-          "C_DATA_DEPTH": {
-            "value": "16384"
-          },
           "C_MON_TYPE": {
             "value": "NATIVE"
           },
           "C_NUM_OF_PROBES": {
-            "value": "20"
-          },
-          "C_PROBE0_MU_CNT": {
-            "value": "3"
+            "value": "1"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
-          },
-          "C_PROBE10_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE11_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE12_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE13_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE14_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE15_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE16_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE17_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE18_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE19_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE1_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE2_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE3_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE4_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE5_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE6_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE7_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE8_MU_CNT": {
-            "value": "3"
-          },
-          "C_PROBE9_MU_CNT": {
-            "value": "3"
           }
         }
-      },
-      "axi_ppm_0": {
-        "vlnv": "iastate.edu:user:axi_ppm:1.0",
-        "xci_name": "MP1BD_axi_ppm_0_1"
       }
     },
     "interface_nets": {
-      "ps7_0_axi_periph_M00_AXI": {
+      "processing_system7_0_DDR": {
         "interface_ports": [
-          "ps7_0_axi_periph/M00_AXI",
-          "axi_ppm_0/S00_AXI"
+          "DDR",
+          "processing_system7_0/DDR"
         ]
       },
       "processing_system7_0_M_AXI_GP0": {
@@ -1217,16 +1148,16 @@
           "ps7_0_axi_periph/S00_AXI"
         ]
       },
+      "ps7_0_axi_periph_M00_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M00_AXI",
+          "axi_ppm_0/S00_AXI"
+        ]
+      },
       "processing_system7_0_FIXED_IO": {
         "interface_ports": [
           "FIXED_IO",
           "processing_system7_0/FIXED_IO"
-        ]
-      },
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "processing_system7_0/DDR"
         ]
       }
     },
@@ -1239,8 +1170,8 @@
           "rst_ps7_0_100M/slowest_sync_clk",
           "ps7_0_axi_periph/M00_ACLK",
           "ps7_0_axi_periph/ACLK",
-          "system_ila_0/clk",
-          "axi_ppm_0/s00_axi_aclk"
+          "axi_ppm_0/s00_axi_aclk",
+          "system_ila_0/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1261,8 +1192,8 @@
       "ppm_input_0_1": {
         "ports": [
           "ppm_input",
-          "system_ila_0/probe0",
-          "axi_ppm_0/ppm_input"
+          "axi_ppm_0/ppm_input",
+          "system_ila_0/probe0"
         ],
         "hdl_attributes": {
           "DEBUG": {

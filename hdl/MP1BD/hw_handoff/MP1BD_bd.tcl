@@ -573,33 +573,9 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
-   CONFIG.ALL_PROBE_SAME_MU {true} \
-   CONFIG.ALL_PROBE_SAME_MU_CNT {3} \
-   CONFIG.C_BRAM_CNT {9} \
-   CONFIG.C_DATA_DEPTH {16384} \
    CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {20} \
-   CONFIG.C_PROBE0_MU_CNT {3} \
+   CONFIG.C_NUM_OF_PROBES {1} \
    CONFIG.C_PROBE0_TYPE {0} \
-   CONFIG.C_PROBE10_MU_CNT {3} \
-   CONFIG.C_PROBE11_MU_CNT {3} \
-   CONFIG.C_PROBE12_MU_CNT {3} \
-   CONFIG.C_PROBE13_MU_CNT {3} \
-   CONFIG.C_PROBE14_MU_CNT {3} \
-   CONFIG.C_PROBE15_MU_CNT {3} \
-   CONFIG.C_PROBE16_MU_CNT {3} \
-   CONFIG.C_PROBE17_MU_CNT {3} \
-   CONFIG.C_PROBE18_MU_CNT {3} \
-   CONFIG.C_PROBE19_MU_CNT {3} \
-   CONFIG.C_PROBE1_MU_CNT {3} \
-   CONFIG.C_PROBE2_MU_CNT {3} \
-   CONFIG.C_PROBE3_MU_CNT {3} \
-   CONFIG.C_PROBE4_MU_CNT {3} \
-   CONFIG.C_PROBE5_MU_CNT {3} \
-   CONFIG.C_PROBE6_MU_CNT {3} \
-   CONFIG.C_PROBE7_MU_CNT {3} \
-   CONFIG.C_PROBE8_MU_CNT {3} \
-   CONFIG.C_PROBE9_MU_CNT {3} \
  ] $system_ila_0
 
   # Create interface connections

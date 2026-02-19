@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Feb 19 15:37:24 2026
+# Process ID: 12392
+# Current directory: C:/Users/zfsalti/488/MP-1/hw/hw.runs/MP1BD_system_ila_0_1_synth_1
+# Command line: vivado.exe -log MP1BD_system_ila_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MP1BD_system_ila_0_1.tcl
+# Log file: C:/Users/zfsalti/488/MP-1/hw/hw.runs/MP1BD_system_ila_0_1_synth_1/MP1BD_system_ila_0_1.vds
+# Journal file: C:/Users/zfsalti/488/MP-1/hw/hw.runs/MP1BD_system_ila_0_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source MP1BD_system_ila_0_1.tcl -notrace

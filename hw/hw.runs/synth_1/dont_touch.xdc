@@ -18,8 +18,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP1BD_rst_ps7_0
 # IP: C:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_axi_ppm_0_1/MP1BD_axi_ppm_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP1BD_axi_ppm_0_1 || ORIG_REF_NAME==MP1BD_axi_ppm_0_1} -quiet] -quiet
 
-# IP: c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/MP1BD_system_ila_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP1BD_system_ila_0_0 || ORIG_REF_NAME==MP1BD_system_ila_0_0} -quiet] -quiet
+# IP: c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/MP1BD_system_ila_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP1BD_system_ila_0_1 || ORIG_REF_NAME==MP1BD_system_ila_0_1} -quiet] -quiet
 
 # IP: c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_auto_pc_0/MP1BD_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP1BD_auto_pc_0 || ORIG_REF_NAME==MP1BD_auto_pc_0} -quiet] -quiet

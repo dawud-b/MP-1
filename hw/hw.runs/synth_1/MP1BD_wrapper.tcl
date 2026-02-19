@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -98,12 +99,12 @@ set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/M
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_rst_ps7_0_100M_0/MP1BD_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_synthesis false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/ip/ip_0/bd_4efa_ila_lib_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/bd_4efa_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_0/MP1BD_system_ila_0_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/ip/ip_0/bd_8e3b_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/bd_8e3b_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_system_ila_0_1/MP1BD_system_ila_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/zfsalti/488/MP-1/hdl/MP1BD/ip/MP1BD_auto_pc_0/MP1BD_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/zfsalti/488/MP-1/hdl/MP1BD/MP1BD_ooc.xdc]
 

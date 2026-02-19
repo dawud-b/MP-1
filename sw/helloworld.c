@@ -72,7 +72,6 @@ void channel_printer(channels_cycles_t channels) {
 int main()
 {
     init_platform();
-
     print("Hello World\n\r");
     print("Successfully ran Hello World application");
 
@@ -87,6 +86,10 @@ int main()
     while (1) {
     	channel_cycles = *channel_cycles_ptr;
     	channel_printer(channel_cycles);
+
+    	int amt = Xil_In32(AXI_PPM_BASE + 0x4);
+    	int desyncs = Xil_In32(AXI_PPM_BASE + 0x8);
+    	xil_printf("Amt: %d. Desyncs: %d\r\n", amt, desyncs);
 
     	usleep(50000);
     }

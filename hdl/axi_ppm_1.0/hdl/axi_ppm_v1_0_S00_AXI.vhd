@@ -134,6 +134,9 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
 	
 	signal s_ppm_generate_output : std_logic;
 	
+	signal s_ppm_in_buf1 : std_logic;
+	signal s_ppm_in_buffered : std_logic;
+	
 	type capture_state_t is (IDLE, PULSE, GAP);
 	signal capture_state : capture_state_t;
 	signal capture_counter : std_logic_vector(31 downto 0);
@@ -147,6 +150,7 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
 	attribute mark_debug of capture_counter: signal is "true";
 	attribute mark_debug of capture_channel_counter: signal is "true";
 	attribute mark_debug of s_channel_count_frame_save: signal is "true";
+	attribute mark_debug of s_ppm_in_buffered: signal is "true";
 	    
 
 begin
@@ -561,10 +565,20 @@ begin
 
 	-- Add user logic here
 	
+	-- buffered ppm_in
+	
+	process (S_AXI_ACLK) begin
+	   if (rising_edge(S_AXI_ACLK)) then
+	       s_ppm_in_buf1 <= ppm_input;
+	       s_ppm_in_buffered <= s_ppm_in_buf1;
+	   end if;
+	end process;
+	
 	-- mux for piping output directly to input based on 0th bit of config register
 	
-    ppm_output <= ppm_input when slv_reg0(0) = '0' else s_ppm_generate_output;
-    slv_reg2 <= x"0000BEEF";
+    ppm_output <= s_ppm_in_buffered when slv_reg0(0) = '0' else s_ppm_generate_output;
+
+
     slv_reg10 <= s_channel_count_registers(0);
     slv_reg11 <= s_channel_count_registers(1);
     slv_reg12 <= s_channel_count_registers(2);
@@ -582,6 +596,7 @@ begin
                 capture_channel_counter <= (others => '0');
                 
                 slv_reg1 <= (others => '0');
+                slv_reg2 <= (others => '0');
                 
                 s_channel_count_registers <= (others => (others => '0'));
                 s_channel_count_frame_save <= (others => (others => '0'));
@@ -591,12 +606,12 @@ begin
                     when IDLE =>
                         capture_counter <= (others => '0');
                         capture_channel_counter <= (others => '0');
-                        if (ppm_input = '0') then
+                        if (s_ppm_in_buffered = '0') then
                             capture_state <= GAP;
                         end if;
                     when GAP =>
                         
-                        if (ppm_input = '1') then
+                        if (s_ppm_in_buffered = '1') then
                             capture_state <= PULSE;
                             
                             if (capture_channel_counter = std_logic_vector(to_unsigned(6, capture_channel_counter'length))) then
@@ -611,7 +626,7 @@ begin
                     when PULSE =>
                         capture_counter <= std_logic_vector(unsigned(capture_counter) + 1);
                         
-                        if (ppm_input = '0') then
+                        if (s_ppm_in_buffered = '0') then
                             capture_state <= GAP;
                             s_channel_count_frame_save(to_integer(unsigned(capture_channel_counter))) <= capture_counter;
                             capture_counter <= (others => '0');
@@ -627,8 +642,9 @@ begin
                 -- have now hit the true idle state
                 -- 500 kCycles = 5 ms assuming 100 MHz clock
                 if (capture_counter = std_logic_vector(to_unsigned(500000, capture_counter'length)) and capture_state /= IDLE) then
-                    s_channel_count_registers <= (others => (others => '0'));
+                    --s_channel_count_registers <= (others => (others => '0'));
                     s_channel_count_frame_save <= (others => (others => '0'));
+                    slv_reg2 <= std_logic_vector(unsigned(slv_reg2) + 1); -- keep track of sync losses
                     capture_state <= IDLE;
                 end if;
                 

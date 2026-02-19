@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Thu Feb 19 10:56:47 2026
+--Date        : Thu Feb 19 15:37:20 2026
 --Host        : CO2041-03 running 64-bit major release  (build 9200)
 --Command     : generate_target MP1BD.bd
 --Design      : MP1BD
@@ -707,31 +707,6 @@ architecture STRUCTURE of MP1BD is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component MP1BD_rst_ps7_0_100M_0;
-  component MP1BD_system_ila_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe8 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe10 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe13 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe14 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe15 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe16 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe17 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe18 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe19 : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component MP1BD_system_ila_0_0;
   component MP1BD_axi_ppm_0_1 is
   port (
     ppm_input : in STD_LOGIC;
@@ -759,6 +734,12 @@ architecture STRUCTURE of MP1BD is
     s00_axi_rready : in STD_LOGIC
   );
   end component MP1BD_axi_ppm_0_1;
+  component MP1BD_system_ila_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component MP1BD_system_ila_0_1;
   signal axi_ppm_0_ppm_output : STD_LOGIC;
   signal ppm_input_0_1 : STD_LOGIC;
   attribute DEBUG : string;
@@ -1059,28 +1040,9 @@ rst_ps7_0_100M: component MP1BD_rst_ps7_0_100M_0
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
-system_ila_0: component MP1BD_system_ila_0_0
+system_ila_0: component MP1BD_system_ila_0_1
      port map (
       clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => ppm_input_0_1,
-      probe1(0) => '0',
-      probe10(0) => '0',
-      probe11(0) => '0',
-      probe12(0) => '0',
-      probe13(0) => '0',
-      probe14(0) => '0',
-      probe15(0) => '0',
-      probe16(0) => '0',
-      probe17(0) => '0',
-      probe18(0) => '0',
-      probe19(0) => '0',
-      probe2(0) => '0',
-      probe3(0) => '0',
-      probe4(0) => '0',
-      probe5(0) => '0',
-      probe6(0) => '0',
-      probe7(0) => '0',
-      probe8(0) => '0',
-      probe9(0) => '0'
+      probe0(0) => ppm_input_0_1
     );
 end STRUCTURE;
