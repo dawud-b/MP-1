@@ -1,4 +1,4 @@
-verilog xil_defaultlib --include "../../../../../hdl/MP1BD/ipshared/ec67/hdl" --include "../../../../../hdl/MP1BD/ipshared/6b56/hdl" \
+verilog xil_defaultlib --include "../../../../../hdl/MP1BD/ipshared/ec67/hdl" --include "../../../../../hdl/MP1BD/ipshared/6b56/hdl" --include "../../../../../hdl/MP1BD/ipshared/1b7e/hdl/verilog" --include "../../../../../hdl/MP1BD/ipshared/122e/hdl/verilog" --include "../../../../../hdl/MP1BD/ipshared/b205/hdl/verilog" --include "../../../../../hdl/MP1BD/ipshared/c968/hdl/verilog" \
 "../../../bd/MP1BD/ip/MP1BD_processing_system7_0_0/sim/MP1BD_processing_system7_0_0.v" \
 "../../../bd/MP1BD/ip/MP1BD_auto_pc_0/sim/MP1BD_auto_pc_0.v" \
 

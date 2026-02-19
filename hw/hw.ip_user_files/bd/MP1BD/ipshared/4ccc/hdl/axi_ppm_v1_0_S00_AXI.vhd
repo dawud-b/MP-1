@@ -131,6 +131,7 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
 	
+	
 	signal s_ppm_generate_output : std_logic;
 	
 	type capture_state_t is (IDLE, PULSE, GAP);
@@ -140,6 +141,13 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
     type capture_channels_count_store_t is array (0 to 5) of std_logic_vector(31 downto 0);
     signal s_channel_count_registers : capture_channels_count_store_t;
     signal s_channel_count_frame_save : capture_channels_count_store_t;
+    
+	attribute mark_debug : string;
+	attribute mark_debug of capture_state: signal is "true";
+	attribute mark_debug of capture_counter: signal is "true";
+	attribute mark_debug of capture_channel_counter: signal is "true";
+	attribute mark_debug of s_channel_count_frame_save: signal is "true";
+	    
 
 begin
 	-- I/O Connections assignments
@@ -239,7 +247,7 @@ begin
 	    if S_AXI_ARESETN = '0' then
 	      slv_reg0 <= (others => '0');
 --	      slv_reg1 <= (others => '0');
-	      slv_reg2 <= (others => '0');
+--	      slv_reg2 <= (others => '0');
 	      slv_reg3 <= (others => '0');
 	      slv_reg4 <= (others => '0');
 	      slv_reg5 <= (others => '0');
@@ -273,14 +281,14 @@ begin
 --	                slv_reg1(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 --	              end if;
 --	            end loop;
-	          when b"0010" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 2
-	                slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
+--	          when b"0010" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 2
+--	                slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
 	          when b"0011" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
@@ -388,7 +396,7 @@ begin
 	          when others =>
 	            slv_reg0 <= slv_reg0;
 --	            slv_reg1 <= slv_reg1;
-	            slv_reg2 <= slv_reg2;
+--	            slv_reg2 <= slv_reg2;
 	            slv_reg3 <= slv_reg3;
 	            slv_reg4 <= slv_reg4;
 	            slv_reg5 <= slv_reg5;
@@ -556,7 +564,7 @@ begin
 	-- mux for piping output directly to input based on 0th bit of config register
 	
     ppm_output <= ppm_input when slv_reg0(0) = '0' else s_ppm_generate_output;
-    
+    slv_reg2 <= x"0000BEEF";
     slv_reg10 <= s_channel_count_registers(0);
     slv_reg11 <= s_channel_count_registers(1);
     slv_reg12 <= s_channel_count_registers(2);
@@ -591,7 +599,7 @@ begin
                         if (ppm_input = '1') then
                             capture_state <= PULSE;
                             
-                            if (capture_channel_counter = x"6") then
+                            if (capture_channel_counter = std_logic_vector(to_unsigned(6, capture_channel_counter'length))) then
                                 capture_channel_counter <= (others => '0');
                                 capture_state <= IDLE;
                                 s_channel_count_registers <= s_channel_count_frame_save; -- save all counts to registers simulatenously so a read from one channel doesn't get values from an old frame while a read from another channel right after gets values from a in progress frame
@@ -613,6 +621,7 @@ begin
                         
                         
                     when others =>
+                        capture_state <= IDLE;
                 end case;
                 -- If we are in a pulse that is longer than, lets say, 5 ms, then we assume we had lost sync and lock and that we
                 -- have now hit the true idle state

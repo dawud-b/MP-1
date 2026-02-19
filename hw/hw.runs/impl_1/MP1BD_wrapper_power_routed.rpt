@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Tue Feb 17 19:08:09 2026
-| Host             : CO2041-09 running 64-bit major release  (build 9200)
+| Date             : Thu Feb 19 10:44:04 2026
+| Host             : CO2041-03 running 64-bit major release  (build 9200)
 | Command          : report_power -file MP1BD_wrapper_power_routed.rpt -pb MP1BD_wrapper_power_summary_routed.pb -rpx MP1BD_wrapper_power_routed.rpx
 | Design           : MP1BD_wrapper
 | Device           : xc7z020clg484-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.680        |
+| Total On-Chip Power (W)  | 1.726        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.536        |
-| Device Static (W)        | 0.144        |
+| Dynamic (W)              | 1.579        |
+| Device Static (W)        | 0.147        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.6         |
-| Junction Temperature (C) | 44.4         |
+| Max Ambient (C)          | 65.1         |
+| Junction Temperature (C) | 44.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,22 +49,25 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.003 |        3 |       --- |             --- |
-| Slice Logic             |     0.001 |     1630 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      465 |     53200 |            0.87 |
-|   Register              |    <0.001 |      791 |    106400 |            0.74 |
-|   CARRY4                |    <0.001 |       12 |     13300 |            0.09 |
-|   LUT as Shift Register |    <0.001 |       60 |     17400 |            0.34 |
-|   Others                |     0.000 |      184 |       --- |             --- |
-| Signals                 |     0.002 |     1262 |       --- |             --- |
-| I/O                     |    <0.001 |        2 |       200 |            1.00 |
-| PS7                     |     1.529 |        1 |       --- |             --- |
-| Static Power            |     0.144 |          |           |                 |
-| Total                   |     1.680 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.034 |        4 |       --- |             --- |
+| Slice Logic              |     0.004 |    16187 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     4504 |     53200 |            8.47 |
+|   Register               |    <0.001 |     7954 |    106400 |            7.48 |
+|   CARRY4                 |    <0.001 |      235 |     13300 |            1.77 |
+|   LUT as Shift Register  |    <0.001 |      764 |     17400 |            4.39 |
+|   F7/F8 Muxes            |    <0.001 |      218 |     53200 |            0.41 |
+|   LUT as Distributed RAM |    <0.001 |       24 |     17400 |            0.14 |
+|   Others                 |     0.000 |     1199 |       --- |             --- |
+| Signals                  |     0.005 |    11258 |       --- |             --- |
+| Block RAM                |     0.007 |       16 |       140 |           11.43 |
+| I/O                      |    <0.001 |        2 |       200 |            1.00 |
+| PS7                      |     1.529 |        1 |       --- |             --- |
+| Static Power             |     0.147 |          |           |                 |
+| Total                    |     1.726 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -73,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.065 |       0.049 |      0.016 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -82,11 +85,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.748 |       0.718 |      0.030 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.749 |       0.718 |      0.031 |       NA    | Unspecified | NA         |
 | Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |       NA    | Unspecified | NA         |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |       NA    | Unspecified | NA         |
@@ -133,11 +136,12 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------+----------------------------------------------------------+-----------------+
-| Clock      | Domain                                                   | Constraint (ns) |
-+------------+----------------------------------------------------------+-----------------+
-| clk_fpga_0 | MP1BD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
-+------------+----------------------------------------------------------+-----------------+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
+| Clock                                                                                      | Domain                                                               | Constraint (ns) |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
+| clk_fpga_0                                                                                 | MP1BD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]             |            10.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |            33.0 |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -149,14 +153,22 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| MP1BD_wrapper            |     1.536 |
-|   MP1BD_i                |     1.536 |
-|     axi_ppm_0            |     0.002 |
-|       U0                 |     0.002 |
+| MP1BD_wrapper            |     1.579 |
+|   MP1BD_i                |     1.559 |
+|     axi_ppm_0            |     0.004 |
+|       U0                 |     0.004 |
 |     processing_system7_0 |     1.530 |
 |       inst               |     1.530 |
 |     ps7_0_axi_periph     |     0.004 |
 |       s00_couplers       |     0.004 |
+|     system_ila_0         |     0.022 |
+|       U0                 |     0.022 |
+|   dbg_hub                |     0.003 |
+|     inst                 |     0.003 |
+|       BSCANID.u_xsdbm_id |     0.003 |
+|   u_ila_0                |     0.016 |
+|     inst                 |     0.016 |
+|       ila_core_inst      |     0.016 |
 +--------------------------+-----------+
 
 

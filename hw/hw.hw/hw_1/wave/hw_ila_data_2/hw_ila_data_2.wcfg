@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/zfsalti/488/MP-1/hw/hw.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="509fs"></ZoomStartTime>
+      <ZoomEndTime time="517fs"></ZoomEndTime>
+      <Cursor1Time time="513fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="440"></NameColumnWidth>
+      <ValueColumnWidth column_width="80"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_channel_count_frame_save[4]_4[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_channel_count_frame_save[5]_5[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[2]_2" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[2]_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_channel_count_frame_save[2]_2[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_channel_count_frame_save[1]_1[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_channel_count_frame_save[3]_3[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_channel_count_frame_save[0]_0[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">capture_state[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">capture_channel_counter[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">capture_counter[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="ppm_input_IBUF" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">ppm_input_IBUF</obj_property>
+      <obj_property name="ObjectShortName">ppm_input_IBUF</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>
