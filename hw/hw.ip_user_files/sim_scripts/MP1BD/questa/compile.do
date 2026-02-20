@@ -70,9 +70,9 @@ vcom -work xil_defaultlib  -93 \
 "../../../bd/MP1BD/ipshared/4ccc/hdl/axi_ppm_v1_0_S00_AXI.vhd" \
 "../../../bd/MP1BD/ipshared/4ccc/hdl/axi_ppm_v1_0.vhd" \
 "../../../bd/MP1BD/ip/MP1BD_axi_ppm_0_1/sim/MP1BD_axi_ppm_0_1.vhd" \
-"../../../bd/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/sim/bd_4efa.vhd" \
-"../../../bd/MP1BD/ip/MP1BD_system_ila_0_0/bd_0/ip/ip_0/sim/bd_4efa_ila_lib_0.vhd" \
-"../../../bd/MP1BD/ip/MP1BD_system_ila_0_0/sim/MP1BD_system_ila_0_0.vhd" \
+"../../../bd/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/sim/bd_8e3b.vhd" \
+"../../../bd/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/ip/ip_0/sim/bd_8e3b_ila_lib_0.vhd" \
+"../../../bd/MP1BD/ip/MP1BD_system_ila_0_1/sim/MP1BD_system_ila_0_1.vhd" \
 
 vlog -work generic_baseblocks_v2_1_0  "+incdir+../../../../../hdl/MP1BD/ipshared/ec67/hdl" "+incdir+../../../../../hdl/MP1BD/ipshared/6b56/hdl" "+incdir+../../../../../hdl/MP1BD/ipshared/1b7e/hdl/verilog" "+incdir+../../../../../hdl/MP1BD/ipshared/122e/hdl/verilog" "+incdir+../../../../../hdl/MP1BD/ipshared/b205/hdl/verilog" "+incdir+../../../../../hdl/MP1BD/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../../../hdl/MP1BD/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \

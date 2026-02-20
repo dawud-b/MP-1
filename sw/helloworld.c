@@ -53,8 +53,13 @@
 #define AXI_PPM_BASE (0x43C00000)
 #define AXI_PPM_CONFIG (0x0)
 #define AXI_PPM_CHANNEL_CAPTURE (40)
+#define AXI_PPM_CHANNEL_GENERATE (4 * 4)
 
 #define AXI_PPM_CONFIG_GENERATE_OUTPUT (1 << 0)
+
+#define CHANNELS_CAPTURE_CYCLES ((channels_cycles_t*) (AXI_PPM_BASE + AXI_PPM_CHANNEL_CAPTURE))
+#define CHANNELS_GENERATE_CYCLES ((channels_cycles_t*) (AXI_PPM_BASE + AXI_PPM_CHANNEL_GENERATE))
+
 
 typedef struct __packed {
 	u32 channel1;
@@ -69,27 +74,47 @@ void channel_printer(channels_cycles_t channels) {
 	xil_printf("Channel 1: %lu. Channel 2: %lu. Channel 3: %lu. Channel 4: %lu. Channel 5: %lu. Channel 6: %lu.\r\n", channels.channel1, channels.channel2, channels.channel3, channels.channel4, channels.channel5, channels.channel6);
 }
 
+void zeros_test() {
+    channels_cycles_t zeros = {0};
+    *CHANNELS_GENERATE_CYCLES = zeros;
+    Xil_Out32(AXI_PPM_BASE, AXI_PPM_CONFIG_GENERATE_OUTPUT);
+    while (1);
+}
+
+void ones_test() {
+	channels_cycles_t full;
+	memset(&full, ~0, sizeof(full));
+	*CHANNELS_GENERATE_CYCLES = full;
+    Xil_Out32(AXI_PPM_BASE, AXI_PPM_CONFIG_GENERATE_OUTPUT);
+	while (1);
+}
+
 int main()
 {
     init_platform();
     print("Hello World\n\r");
     print("Successfully ran Hello World application");
 
-    //Xil_Out32(AXI_PPM_BASE, AXI_PPM_CONFIG_GENERATE_OUTPUT);
+    //zeros_test();
+    //ones_test();
+
+    Xil_Out32(AXI_PPM_BASE, AXI_PPM_CONFIG_GENERATE_OUTPUT);
 
     // make sure our struct type is actually packed correctly
     xil_printf("Size of struct should be %d. Is: %d\r\n", 4*6, sizeof(channels_cycles_t));
 
     channels_cycles_t channel_cycles;
-    channels_cycles_t* const volatile channel_cycles_ptr = (channels_cycles_t*) (AXI_PPM_BASE + AXI_PPM_CHANNEL_CAPTURE);
+
 
     while (1) {
-    	channel_cycles = *channel_cycles_ptr;
+    	channel_cycles = *CHANNELS_CAPTURE_CYCLES;
+    	*CHANNELS_GENERATE_CYCLES = channel_cycles;
+
     	channel_printer(channel_cycles);
 
     	int amt = Xil_In32(AXI_PPM_BASE + 0x4);
     	int desyncs = Xil_In32(AXI_PPM_BASE + 0x8);
-    	xil_printf("Amt: %d. Desyncs: %d\r\n", amt, desyncs);
+    	xil_printf("Amt: %d. Relocks back to idle: %d\r\n", amt, desyncs);
 
     	usleep(50000);
     }

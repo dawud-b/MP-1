@@ -15,172 +15,36 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "MP1BD_i/system_ila_0/U0/ila_lib",
+                        "name": "u_ila_0",
                         "spec": "labtools_ila_v6",
-                        "ipName": "ila",
                         "core_location": {
                             "user_chain": 1,
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "FAFFFDC9164E5539AF49A2BA5BD9B1CF",
+                        "uuid": "23e7d65a79bc59f7bc47406c1714dfae",
                         "pins": [
                             {
                                 "name": "probe0",
                                 "id": 0,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "MP1BD_i/system_ila_0/U0/probe0_1",
-                                        "isBus": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "native_ports": [
-                            {
-                                "name": "probe0",
-                                "connectedBus": "ppm_input_0_1",
-                                "protocol": "PROBE",
-                                "port_maps": [
-                                    {
-                                        "logical_port": "probe0",
-                                        "physical_pin": {
-                                            "id": 0,
-                                            "name": "probe0",
-                                            "leftBit": 0,
-                                            "width": 1
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "type": "ILA_V3",
-                        "name": "u_ila_0",
-                        "spec": "labtools_ila_v6",
-                        "core_location": {
-                            "user_chain": 1,
-                            "slave_index": 1,
-                            "bscan_switch_index": 0
-                        },
-                        "uuid": "23E7D65A79BC59F7BC47406C1714DFAE",
-                        "pins": [
-                            {
-                                "name": "probe0",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 31,
+                                "rightIndex": 1,
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter",
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[31]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state[1]",
+                                                "parentNetId": 0
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[30]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[29]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[28]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[27]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[26]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[25]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[24]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[23]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[22]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[21]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[20]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[19]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[18]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[17]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[16]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[15]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[14]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[13]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[12]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[11]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[10]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[9]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[8]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[7]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[6]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[5]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[4]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[3]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[2]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[1]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[0]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state[0]",
+                                                "parentNetId": 1
                                             }
                                         ]
                                     }
@@ -188,7 +52,7 @@
                             },
                             {
                                 "name": "probe1",
-                                "id": 2,
+                                "id": 1,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -197,17 +61,17 @@
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter",
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_channel_counter",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[2]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_channel_counter[2]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[1]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_channel_counter[1]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[0]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_channel_counter[0]"
                                             }
                                         ]
                                     }
@@ -215,25 +79,113 @@
                             },
                             {
                                 "name": "probe2",
-                                "id": 3,
+                                "id": 2,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 1,
+                                "rightIndex": 31,
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state",
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[1]",
-                                                "parentNetId": 36
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[31]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[0]",
-                                                "parentNetId": 37
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_counter[0]"
                                             }
                                         ]
                                     }
@@ -241,7 +193,7 @@
                             },
                             {
                                 "name": "probe3",
-                                "id": 4,
+                                "id": 3,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -250,104 +202,104 @@
                                 "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3",
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[31]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[31]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[30]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[30]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[29]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[29]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[28]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[28]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[27]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[27]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[26]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[26]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[25]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[25]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[24]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[24]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[23]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[23]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[22]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[22]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[21]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[21]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[20]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[20]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[19]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[19]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[18]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[18]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[17]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[17]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[16]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[16]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[15]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[15]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[14]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[14]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[13]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[13]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[12]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[12]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[11]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[11]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[10]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[10]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[9]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[9]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[8]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[8]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[7]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[7]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[6]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[6]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[5]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[5]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[4]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[4]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[3]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[3]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[2]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[2]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[1]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[1]"
                                             },
                                             {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[0]"
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_pulse_gap_counter[0]"
                                             }
                                         ]
                                     }
@@ -355,469 +307,13 @@
                             },
                             {
                                 "name": "probe4",
-                                "id": 5,
+                                "id": 4,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 31,
                                 "portIndex": 4,
-                                "nets": [
-                                    {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[31]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[30]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[29]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[28]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[27]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[26]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[25]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[24]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[23]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[22]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[21]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[20]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[19]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[18]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[17]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[16]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[15]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[14]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[13]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[12]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[11]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[10]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[9]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[8]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[7]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[6]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[5]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[4]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[3]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[2]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[1]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe5",
-                                "id": 6,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[31]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[30]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[29]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[28]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[27]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[26]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[25]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[24]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[23]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[22]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[21]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[20]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[19]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[18]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[17]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[16]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[15]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[14]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[13]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[12]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[11]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[10]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[9]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[8]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[7]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[6]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[5]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[4]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[3]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[2]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[1]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe6",
-                                "id": 7,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 6,
-                                "nets": [
-                                    {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[31]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[30]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[29]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[28]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[27]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[26]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[25]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[24]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[23]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[22]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[21]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[20]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[19]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[18]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[17]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[16]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[15]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[14]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[13]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[12]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[11]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[10]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[9]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[8]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[7]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[6]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[5]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[4]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[3]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[2]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[1]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe7",
-                                "id": 8,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 7,
-                                "nets": [
-                                    {
-                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[31]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[30]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[29]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[28]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[27]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[26]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[25]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[24]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[23]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[22]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[21]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[20]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[19]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[18]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[17]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[16]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[15]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[14]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[13]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[12]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[11]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[10]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[9]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[8]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[7]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[6]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[5]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[4]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[3]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[2]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[1]"
-                                            },
-                                            {
-                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe8",
-                                "id": 9,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 8,
                                 "nets": [
                                     {
                                         "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[2]_2",
@@ -924,14 +420,751 @@
                                 ]
                             },
                             {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[31]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[5]_5[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[31]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[1]_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[31]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[3]_3[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[31]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[4]_4[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "probe9",
-                                "id": 10,
+                                "id": 9,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 31,
                                 "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[31]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_channel_count_frame_save[0]_0[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 2,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_channel_counter[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[1]",
+                                                "parentNetId": 264
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[0]",
+                                                "parentNetId": 265
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[31]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[30]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[29]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[28]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[27]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[26]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[25]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[24]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[23]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[22]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[21]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[20]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[19]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[18]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[17]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[16]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[15]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[14]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[13]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[12]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[11]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[10]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[9]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[8]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[7]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[6]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[5]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[4]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[3]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[2]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[1]"
+                                            },
+                                            {
+                                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_counter[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 13,
                                 "nets": [
                                     {
                                         "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/slv_reg2_reg",
@@ -1038,14 +1271,14 @@
                                 ]
                             },
                             {
-                                "name": "probe10",
-                                "id": 11,
+                                "name": "probe14",
+                                "id": 14,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 10,
+                                "portIndex": 14,
                                 "nets": [
                                     {
                                         "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/s_ppm_in_buffered",
@@ -1058,7 +1291,53 @@
                 ],
                 "parent_nets": [
                     {
-                        "id": 36,
+                        "id": 0,
+                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state[1]",
+                        "state_reg": [
+                            {
+                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "gen_gap",
+                                        "val": "01"
+                                    },
+                                    {
+                                        "name": "gen_pulse",
+                                        "val": "10"
+                                    },
+                                    {
+                                        "name": "gen_idle",
+                                        "val": "00"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state[0]",
+                        "state_reg": [
+                            {
+                                "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/generation_state_reg[0]",
+                                "states": [
+                                    {
+                                        "name": "gen_gap",
+                                        "val": "01"
+                                    },
+                                    {
+                                        "name": "gen_pulse",
+                                        "val": "10"
+                                    },
+                                    {
+                                        "name": "gen_idle",
+                                        "val": "00"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 264,
                         "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[1]",
                         "state_reg": [
                             {
@@ -1081,7 +1360,7 @@
                         ]
                     },
                     {
-                        "id": 37,
+                        "id": 265,
                         "name": "MP1BD_i/axi_ppm_0/U0/axi_ppm_v1_0_S00_AXI_inst/capture_state[0]",
                         "state_reg": [
                             {

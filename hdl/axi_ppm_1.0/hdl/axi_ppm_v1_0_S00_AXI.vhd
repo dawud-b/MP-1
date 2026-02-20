@@ -137,6 +137,8 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
 	signal s_ppm_in_buf1 : std_logic;
 	signal s_ppm_in_buffered : std_logic;
 	
+	signal s_ppm_muxed_output : std_logic;
+	
 	type capture_state_t is (IDLE, PULSE, GAP);
 	signal capture_state : capture_state_t;
 	signal capture_counter : std_logic_vector(31 downto 0);
@@ -145,12 +147,12 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
     signal s_channel_count_registers : capture_channels_count_store_t;
     signal s_channel_count_frame_save : capture_channels_count_store_t;
 
-	type generation_state_t is (GEN_IDLE, GEN_GAP);
+	type generation_state_t is (GEN_IDLE, GEN_GAP, GEN_PULSE);
 	signal generation_state : generation_state_t;
 	signal generation_counter : std_logic_vector(31 downto 0);
-	signal generation_gap_counter : std_logic_vector(31 downto 0);
+	signal generation_pulse_gap_counter : std_logic_vector(31 downto 0);
 	signal generation_channel_counter : std_logic_vector(2 downto 0);
-		signal s_channel_generation_save : capture_channels_count_store_t;
+	signal s_channel_generation_cycles : capture_channels_count_store_t;
     
 	attribute mark_debug : string;
 	attribute mark_debug of capture_state: signal is "true";
@@ -158,6 +160,12 @@ architecture arch_imp of axi_ppm_v1_0_S00_AXI is
 	attribute mark_debug of capture_channel_counter: signal is "true";
 	attribute mark_debug of s_channel_count_frame_save: signal is "true";
 	attribute mark_debug of s_ppm_in_buffered: signal is "true";
+	
+	attribute mark_debug of generation_state: signal is "true";
+	attribute mark_debug of generation_counter: signal is "true";
+	attribute mark_debug of generation_pulse_gap_counter: signal is "true";
+	attribute mark_debug of generation_channel_counter: signal is "true";
+	
 	    
 
 begin
@@ -573,7 +581,6 @@ begin
 	-- Add user logic here
 	
 	-- buffered ppm_in
-	
 	process (S_AXI_ACLK) begin
 	   if (rising_edge(S_AXI_ACLK)) then
 	       s_ppm_in_buf1 <= ppm_input;
@@ -581,8 +588,16 @@ begin
 	   end if;
 	end process;
 	
-	-- mux for piping output directly to input based on 0th bit of config register
-    ppm_output <= s_ppm_in_buffered when slv_reg0(0) = '0' else s_ppm_generate_output;
+	-- mux for piping input to output based on 0th bit of config register
+	s_ppm_muxed_output <= s_ppm_in_buffered when (slv_reg0(0) = '0') else s_ppm_generate_output;
+	-- have output flip flopped in case of combinatorial switching or glitching
+	process (S_AXI_ACLK) begin
+	   if (rising_edge(S_AXI_ACLK)) then
+	       ppm_output <= s_ppm_muxed_output;
+	   end if;
+	end process;
+    
+
 
 
     slv_reg10 <= s_channel_count_registers(0);
@@ -592,12 +607,13 @@ begin
     slv_reg14 <= s_channel_count_registers(4);
     slv_reg15 <= s_channel_count_registers(5);
 
-		s_channel_generation_save(0) <= slv_reg4;
-		s_channel_generation_save(1) <= slv_reg5;
-		s_channel_generation_save(2) <= slv_reg6;
-		s_channel_generation_save(3) <= slv_reg7;
-		s_channel_generation_save(4) <= slv_reg8;
-		s_channel_generation_save(5) <= slv_reg9;
+    -- limit pulse width to 2^18 - 1 cycles
+	s_channel_generation_cycles(0) <= (31 downto 18 => '0') & slv_reg4(17 downto 0);
+	s_channel_generation_cycles(1) <= (31 downto 18 => '0') & slv_reg5(17 downto 0);
+	s_channel_generation_cycles(2) <= (31 downto 18 => '0') & slv_reg6(17 downto 0);
+	s_channel_generation_cycles(3) <= (31 downto 18 => '0') & slv_reg7(17 downto 0);
+	s_channel_generation_cycles(4) <= (31 downto 18 => '0') & slv_reg8(17 downto 0);
+	s_channel_generation_cycles(5) <= (31 downto 18 => '0') & slv_reg9(17 downto 0);
     
 	-- PPM Capture logic
     process(S_AXI_ACLK) begin
@@ -667,45 +683,62 @@ begin
 
 
 	-- PPM Generation Logic:
+    s_ppm_generate_output <= '1' when (generation_state = GEN_IDLE or generation_state = GEN_PULSE) else '0';
+	-- Gap is 404 us . 404 us * 100 MHz = 100*404 cycles = 40400 cycles
+	-- Limit pulse to 2.1 ms . 2100 us * 100 MHz = 2100*100 cycles = 210000 cycles
+	-- limit pulse by masking off top of bits
 		process(S_AXI_ACLK) begin
 			if (rising_edge(S_AXI_ACLK)) then
 				
 				if (S_AXI_ARESETN = '0') then
-					generation_state <= GEN_IDLE;
+					generation_state <= GEN_GAP;
 					generation_counter <= (others => '0');
-					generation_gap_counter <= (others => '0');
+					generation_pulse_gap_counter <= (others => '0');
 					generation_channel_counter <= (others => '0');
 
 				else
+				    generation_counter <= std_logic_vector(unsigned(generation_counter) + 1);
+				    
 					case generation_state is
-
-						when GEN_IDLE =>
-							generation_channel_counter <= (others => '0');
-							
-							-- Once generation counter reaches period (20ms), then we should restart ppm generation, starting with a gap.
-							if (generation_counter = std_logic_vector(to_unsigned(2000000, generation_counter'length))) then
-								generation_gap_counter <= (others => '0');
-								generation_state => GEN_GAP;
-							end if;
-
 						when GEN_GAP =>
-							generation_gap_counter <= std_logic_vector(unsigned(generation_gap_counter) + 1);
+							generation_pulse_gap_counter <= std_logic_vector(unsigned(generation_pulse_gap_counter) + 1);
 
 							-- gaps should be x us
-							if (generation_gap_counter = std_logic_vector(to_unsigned( , generation_gap_counter'length))) then
-								generation_gap_counter <= (others => '0');
-								-- last channel, go to IDLE
+							if (generation_pulse_gap_counter = std_logic_vector(to_unsigned(40400 , generation_pulse_gap_counter'length))) then
+								generation_pulse_gap_counter <= (others => '0');
 								if (generation_channel_counter = std_logic_vector(to_unsigned(6, capture_channel_counter'length))) then
 									generation_state <= GEN_IDLE;
 								else
 									generation_state <= GEN_PULSE;
 								end if;
 							end if;
+						
+						when GEN_PULSE =>
+						  generation_pulse_gap_counter <= std_logic_vector(unsigned(generation_pulse_gap_counter) + 1);
+						  
+						  if (generation_pulse_gap_counter = s_channel_generation_cycles(to_integer(unsigned(generation_channel_counter)))) then
+						      generation_channel_counter <= std_logic_vector(unsigned(generation_channel_counter) + 1);
+						      generation_state <= GEN_GAP;
+						      generation_pulse_gap_counter <= (others => '0');
+						  end if;
+						
+						when GEN_IDLE =>
+							generation_channel_counter <= (others => '0');
+							
+							-- Once generation counter reaches period (20ms), then we should restart ppm generation, starting with a gap.
+							if (generation_counter = std_logic_vector(to_unsigned(2000000, generation_counter'length))) then
+								generation_state <= GEN_GAP;
+								generation_counter <= (others => '0');
+							end if;
+                        
+                        when others =>
+                            generation_state <= GEN_IDLE;
 
 					end case;
 				end if;
 			end if;
 		end process;
+		
 
 	-- User logic ends
 
