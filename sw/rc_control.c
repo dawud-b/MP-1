@@ -98,6 +98,7 @@ typedef enum {
 	BUTTON_U_GPIO = 1 << 4
 } button_gpio_position_t;
 
+
 void gpio_init() {
 	// sort of redundant considering the AXI GPIO hardware was setup to have a default direction of input
 	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR + 0x4, ~0); // GPIO_TRI. 1 is input
@@ -114,6 +115,8 @@ int main()
     gpio_init();
 
     frame_store_t frame_store = frame_store_init(60 * 50 * sizeof(channels_cycles_t));
+
+    channels_cycles_t channels_moving_average[4] = {0}; // size of 4 so division can be bit shift
 
     mode_t mode = MODE_HARDWARE_RELAY;
     Xil_Out32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x0, 0);
@@ -215,7 +218,32 @@ int main()
     		channels_cycles_t frame;
     		frame_store_traverse_frame(&frame_store, &frame);
     		*CHANNELS_GENERATE_CYCLES = frame;
-    		printf("Channel 3: %lu\r\n", frame.channel3);
+    		break;
+
+    	case MODE_SOFTWARE_FILTER: {
+    		u32 new_frames = Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 4*1);
+    		if (frames != new_frames) {
+
+    			frames = new_frames;
+
+    			channels_moving_average[3] = channels_moving_average[2];
+    			channels_moving_average[2] = channels_moving_average[1];
+    			channels_moving_average[1] = channels_moving_average[0];
+    			channels_moving_average[0] = *CHANNELS_CAPTURE_CYCLES;
+
+    			channels_cycles_t filtered_channels;
+    			for (int i = 0; i < sizeof(channels_cycles_t) / sizeof(filtered_channels.channel1); i++) {
+    				filtered_channels.channels[i] = (channels_moving_average[0].channels[i] + channels_moving_average[1].channels[i] + channels_moving_average[2].channels[i] + channels_moving_average[3].channels[i]) / 4;
+    			}
+    			channels_moving_average[0] = filtered_channels;
+    		}
+    		u32 new_gen_frames = Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 4*3);
+    		if (gen_frames != new_gen_frames) { // don't interrupt a moving generation frame
+    			gen_frames = new_gen_frames;
+    			*CHANNELS_GENERATE_CYCLES = channels_moving_average[0];
+    		}
+
+    	}
 
     	case MODE_HARDWARE_RELAY:
     	default:
