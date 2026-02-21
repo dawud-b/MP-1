@@ -39,12 +39,12 @@
   "../../../bd/MP1BD/ipshared/4ccc/hdl/axi_ppm_v1_0_S00_AXI.vhd" \
   "../../../bd/MP1BD/ipshared/4ccc/hdl/axi_ppm_v1_0.vhd" \
   "../../../bd/MP1BD/ip/MP1BD_axi_ppm_0_1/sim/MP1BD_axi_ppm_0_1.vhd" \
-  "../../../bd/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/sim/bd_8e3b.vhd" \
-  "../../../bd/MP1BD/ip/MP1BD_system_ila_0_1/bd_0/ip/ip_0/sim/bd_8e3b_ila_lib_0.vhd" \
-  "../../../bd/MP1BD/ip/MP1BD_system_ila_0_1/sim/MP1BD_system_ila_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/generic_baseblocks_v2_1_0 \
   "../../../../../hdl/MP1BD/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/axi_register_slice_v2_1_21 \
+  "../../../../../hdl/MP1BD/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v" \
 -endlib
 -makelib xcelium_lib/fifo_generator_v13_2_5 \
   "../../../../../hdl/MP1BD/ipshared/276e/simulation/fifo_generator_vlog_beh.v" \
@@ -58,8 +58,23 @@
 -makelib xcelium_lib/axi_data_fifo_v2_1_20 \
   "../../../../../hdl/MP1BD/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
 -endlib
--makelib xcelium_lib/axi_register_slice_v2_1_21 \
-  "../../../../../hdl/MP1BD/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-makelib xcelium_lib/axi_crossbar_v2_1_22 \
+  "../../../../../hdl/MP1BD/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/MP1BD/ip/MP1BD_xbar_0/sim/MP1BD_xbar_0.v" \
+-endlib
+-makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
+  "../../../../../hdl/MP1BD/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/interrupt_control_v3_1_4 \
+  "../../../../../hdl/MP1BD/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/axi_gpio_v2_0_23 \
+  "../../../../../hdl/MP1BD/ipshared/bb35/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/MP1BD/ip/MP1BD_axi_gpio_0_0/sim/MP1BD_axi_gpio_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_21 \
   "../../../../../hdl/MP1BD/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

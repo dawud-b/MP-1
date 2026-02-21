@@ -267,7 +267,7 @@ begin
 	      slv_reg0 <= (others => '0');
 --	      slv_reg1 <= (others => '0');
 --	      slv_reg2 <= (others => '0');
-	      slv_reg3 <= (others => '0');
+--	      slv_reg3 <= (others => '0');
 	      slv_reg4 <= (others => '0');
 	      slv_reg5 <= (others => '0');
 	      slv_reg6 <= (others => '0');
@@ -308,14 +308,14 @@ begin
 --	                slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 --	              end if;
 --	            end loop;
-	          when b"0011" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 3
-	                slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
+--	          when b"0011" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 3
+--	                slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
 	          when b"0100" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
@@ -416,7 +416,7 @@ begin
 	            slv_reg0 <= slv_reg0;
 --	            slv_reg1 <= slv_reg1;
 --	            slv_reg2 <= slv_reg2;
-	            slv_reg3 <= slv_reg3;
+--	            slv_reg3 <= slv_reg3;
 	            slv_reg4 <= slv_reg4;
 	            slv_reg5 <= slv_reg5;
 	            slv_reg6 <= slv_reg6;
@@ -691,6 +691,7 @@ begin
 			if (rising_edge(S_AXI_ACLK)) then
 				
 				if (S_AXI_ARESETN = '0') then
+				    slv_reg3 <= (others => '0');
 					generation_state <= GEN_GAP;
 					generation_counter <= (others => '0');
 					generation_pulse_gap_counter <= (others => '0');
@@ -707,6 +708,7 @@ begin
 							if (generation_pulse_gap_counter = std_logic_vector(to_unsigned(40400 , generation_pulse_gap_counter'length))) then
 								generation_pulse_gap_counter <= (others => '0');
 								if (generation_channel_counter = std_logic_vector(to_unsigned(6, capture_channel_counter'length))) then
+								    slv_reg3 <= std_logic_vector(unsigned(slv_reg3) + 1);
 									generation_state <= GEN_IDLE;
 								else
 									generation_state <= GEN_PULSE;
