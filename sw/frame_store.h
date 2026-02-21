@@ -23,10 +23,6 @@ typedef struct {
 	int play_idx;
 } frame_store_t;
 
-typedef struct {
-	char err;
-	channels_cycles_t frame;
-} frame_ret_t;
 
 frame_store_t frame_store_init(int n_frames);
 
@@ -34,7 +30,7 @@ int frame_store_stow_frame(frame_store_t* frame_store, channels_cycles_t frame);
 
 void frame_store_remove_frames(frame_store_t* frame_store);
 
-frame_ret_t frame_store_traverse_frame(frame_store_t* frame_store);
+int frame_store_traverse_frame(frame_store_t* frame_store, channels_cycles_t* frame);
 
 void frame_store_rewind(frame_store_t* frame_store);
 

@@ -54,8 +54,8 @@
 
 #define AXI_PPM_CAPTURE_CHANNELS_OFFSET (4 * 10)
 #define AXI_PPM_GENERATE_CHANNELS_OFFSET (4 * 4)
-#define CHANNELS_CAPTURE_CYCLES ((channels_cycles_t*) (XPAR_AXI_PPM_0_S00_AXI_BASEADDR + AXI_PPM_CAPTURE_CHANNELS_OFFSET))
-#define CHANNELS_GENERATE_CYCLES ((channels_cycles_t*) (XPAR_AXI_PPM_0_S00_AXI_BASEADDR + AXI_PPM_GENERATE_CHANNELS_OFFSET))
+#define CHANNELS_CAPTURE_CYCLES ((volatile channels_cycles_t*) (XPAR_AXI_PPM_0_S00_AXI_BASEADDR + AXI_PPM_CAPTURE_CHANNELS_OFFSET))
+#define CHANNELS_GENERATE_CYCLES ((volatile channels_cycles_t*) (XPAR_AXI_PPM_0_S00_AXI_BASEADDR + AXI_PPM_GENERATE_CHANNELS_OFFSET))
 
 /*
 // Should match memory register layout so we can load/store into the peripheral as a single type: e.g. *CHANNELS_GENERATE_CYCLES = *CHANNELS_CAPTURE_CYCLES
@@ -128,13 +128,13 @@ int main()
     	u32 buttons = Xil_In32(XPAR_AXI_GPIO_0_BASEADDR + 0x8);
 
     	if (!(switches & (1 << 0))) {
-    		if (mode != MODE_HARDWARE_RELAY) // Don't slow the loop by doing redundant memory calls
-    			Xil_Out32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x0, 0);
+    		if (__builtin_expect((mode != MODE_HARDWARE_RELAY), 0)) // mode changes are rare from the loops perspective
+    			Xil_Out32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x0, 0); // don't waste cycles on doing redundant memory writes
 
     		mode = MODE_HARDWARE_RELAY;
     	}
     	else {
-    		if (mode != MODE_SOFTWARE_RELAY) // Don't slow the loop by doing redundant memory calls
+    		if (__builtin_expect((mode != MODE_SOFTWARE_RELAY), 0))
     			Xil_Out32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x0, 1);
 
     		mode = MODE_SOFTWARE_RELAY;
@@ -144,8 +144,11 @@ int main()
     		mode = MODE_SOFTWARE_DEBUG;
     	else if (switches & (1 << 2))
     		mode = MODE_SOFTWARE_RECORD;
-    	else if (switches & (1 << 3))
+    	else if (switches & (1 << 3)) {
+    		if (__builtin_expect((mode != MODE_SOFTWARE_PLAY), 0))
+    			Xil_Out32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x0, 1);
     		mode = MODE_SOFTWARE_PLAY;
+    	}
     	else if (switches & (1 << 4))
     		mode = MODE_SOFTWARE_FILTER;
 
@@ -174,6 +177,7 @@ int main()
     		break;
     	}
     	case MODE_SOFTWARE_RECORD:
+    		*CHANNELS_GENERATE_CYCLES = *CHANNELS_CAPTURE_CYCLES;
 
     		if (buttons & BUTTON_U_GPIO) {
     			frame_store_remove_frames(&frame_store);
@@ -208,9 +212,10 @@ int main()
     		if (gen_frames == new_gen_frames)
     			break;
     		gen_frames = new_gen_frames;
-
-    		frame_ret_t frame_ret = frame_store_traverse_frame(&frame_store);
-    		*CHANNELS_GENERATE_CYCLES = frame_ret.frame;
+    		channels_cycles_t frame;
+    		frame_store_traverse_frame(&frame_store, &frame);
+    		*CHANNELS_GENERATE_CYCLES = frame;
+    		printf("Channel 3: %lu\r\n", frame.channel3);
 
     	case MODE_HARDWARE_RELAY:
     	default:

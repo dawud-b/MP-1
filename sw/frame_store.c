@@ -30,14 +30,15 @@ void frame_store_remove_frames(frame_store_t* frame_store) {
 	frame_store->store_idx = 0;
 }
 
-frame_ret_t frame_store_traverse_frame(frame_store_t* frame_store) {
+int frame_store_traverse_frame(frame_store_t* frame_store, channels_cycles_t* frame) {
 
 	if (frame_store->play_idx >= frame_store->n_frames_stored)
-		return (frame_ret_t) { .err = 1 };
+		return 1;
 
-	channels_cycles_t frame = frame_store->buffer[frame_store->play_idx];
+	*frame = frame_store->buffer[frame_store->play_idx];
 	frame_store->play_idx++;
-	return (frame_ret_t) { .err = 0, .frame = frame };
+
+	return 0;
 }
 
 void frame_store_rewind(frame_store_t* frame_store) {
