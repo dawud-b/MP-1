@@ -42,40 +42,58 @@ uart_packet_format = "<BIIIIIII"
 packet_size = struct.calcsize(uart_packet_format)
 print(f"{packet_size}")
 
+fig.canvas.start_event_loop(0.1)
+
 uart = serial.Serial("COM28", 115200, timeout=1)
 
 while True:
     if uart.in_waiting >= 1:
         data = uart.readline()
-        print(data.decode(encoding='ascii'))
+        dec = data.decode(encoding='ascii')
+        print(dec)
+        u_data = [int(item) for item in dec.split()]
+        if len(u_data) != 8:
+            continue
+        print(f"{u_data}")
+        #data = uart.read(packet_size)
+        relocks = u_data[0]
+        total_captures = u_data[1]
+        channel0 = u_data[2]
+        channel1 = u_data[3]
+        channel2 = u_data[4]
+        channel3 = u_data[5]
+        channel4 = u_data[6]
+        channel5 = u_data[7]
+        
 
         # relocks, total_captures, channel0, channel1, channel2, channel3, channel4, channel5 = struct.unpack(uart_packet_format, data)
         # print(f"{channel0} {channel1} {channel2} {channel3} {channel4} {channel5}")
-        # the_channels = np.array([channel0, channel1, channel2, channel3, channel4, channel5]) / 100
-        # rects = raw_channels_hbar.patches
-        # rects[0].set_width(the_channels[0])
-        # rects[1].set_width(the_channels[1])
-        # rects[2].set_width(the_channels[2])
-        # rects[3].set_width(the_channels[3])
-        # rects[4].set_width(the_channels[4])
-        # rects[5].set_width(the_channels[5])
+        the_channels = np.array([channel0, channel1, channel2, channel3, channel4, channel5]) / 100
+        rects = raw_channels_hbar.patches
+        rects[0].set_width(the_channels[0])
+        rects[1].set_width(the_channels[1])
+        rects[2].set_width(the_channels[2])
+        rects[3].set_width(the_channels[3])
+        rects[4].set_width(the_channels[4])
+        rects[5].set_width(the_channels[5])
 
-        # rects = stuck_channels_vbar.patches
-        # rects[0].set_width(the_channels[5])
-        # rects[1].set_width(the_channels[2])
-        # rects[2].set_width(the_channels[4])
+        rects = stuck_channels_vbar.patches
+        rects[0].set_width(the_channels[5])
+        rects[1].set_width(the_channels[2])
+        rects[2].set_width(the_channels[4])
 
-        # rects = centered_channels_hbar.patches
-        # rects[0].set_width(the_channels[3])
-        # rects[1].set_width(the_channels[1])
-        # rects[2].set_width(the_channels[0])
+        rects = centered_channels_hbar.patches
+        rects[0].set_width(the_channels[3])
+        rects[1].set_width(the_channels[1])
+        rects[2].set_width(the_channels[0])
 
         
-        # some_text.set_text(f"Relocks to idle: {relocks}. Captures: {total_captures}. Total capture time: {total_captures * 0.02} seconds")
+        some_text.set_text(f"Relocks to idle: {relocks}. Captures: {total_captures}. Total capture time: {total_captures * 0.02} seconds")
+        # fig.canvas.blit(ax_centers.bbox)
+        # fig.canvas.blit(ax_channels_raw.bbox)
+        # fig.canvas.blit(ax_throttles.bbox)
         fig.canvas.draw_idle()
-        fig.canvas.flush_events()
-        
-
+        fig.canvas.start_event_loop(0.001) #this or that slows down loop too much
 
 while True:
     count += 1

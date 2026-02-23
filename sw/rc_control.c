@@ -102,7 +102,6 @@ typedef enum {
 
 typedef union __packed {
 	struct __packed {
-		uint8_t START;
 		uint8_t relocks;
 		uint32_t captures;
 		channels_cycles_t channels;
@@ -195,14 +194,13 @@ int main()
 
 
     		/*uart_packet_t packet;
-    		packet.START = 'S';
     		packet.relocks = syncs;
     		packet.captures = frames;
     		packet.channels = channels_cycles;
 
     		for (int i = 0; i < sizeof(packet); i++)
     			XUartPs_SendByte(STDOUT_BASEADDRESS, packet.raw[i]);*/
-    		printf("%lu, %lu, %lu, %lu, %lu, %lu, %lu, %lu\r\n", syncs, frames, channels_cycles.channel1, channels_cycles.channel2, channels_cycles.channel3, channels_cycles.channel4, channels_cycles.channel5);
+    		printf("%lu %lu %lu %lu %lu %lu %lu %lu\r\n", syncs, frames, channels_cycles.channel1, channels_cycles.channel2, channels_cycles.channel3, channels_cycles.channel4, channels_cycles.channel5, channels_cycles.channel6);
 #endif
 
     		break;
