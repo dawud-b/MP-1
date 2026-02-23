@@ -57,6 +57,8 @@
 #define CHANNELS_CAPTURE_CYCLES ((volatile channels_cycles_t*) (XPAR_AXI_PPM_0_S00_AXI_BASEADDR + AXI_PPM_CAPTURE_CHANNELS_OFFSET))
 #define CHANNELS_GENERATE_CYCLES ((volatile channels_cycles_t*) (XPAR_AXI_PPM_0_S00_AXI_BASEADDR + AXI_PPM_GENERATE_CHANNELS_OFFSET))
 
+#define USE_GUI
+
 /*
 // Should match memory register layout so we can load/store into the peripheral as a single type: e.g. *CHANNELS_GENERATE_CYCLES = *CHANNELS_CAPTURE_CYCLES
 typedef union __packed {
@@ -98,6 +100,16 @@ typedef enum {
 	BUTTON_U_GPIO = 1 << 4
 } button_gpio_position_t;
 
+typedef union __packed {
+	struct __packed {
+		uint8_t START;
+		uint8_t relocks;
+		uint32_t captures;
+		channels_cycles_t channels;
+	};
+	uint8_t raw[2 * sizeof(uint8_t) + sizeof(uint32_t) + sizeof(channels_cycles_t)];
+} uart_packet_t;
+
 
 void gpio_init() {
 	// sort of redundant considering the AXI GPIO hardware was setup to have a default direction of input
@@ -109,8 +121,9 @@ int main()
 {
     init_platform();
 
-    print("Hello World\n\r");
-    print("Successfully ran Hello World application");
+
+    //print("Hello World\n\r");
+    //print("Successfully ran Hello World application");
 
     gpio_init();
 
@@ -171,12 +184,27 @@ int main()
     		u32 syncs = Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 4*2);
     		channels_cycles_t channels_cycles = *CHANNELS_CAPTURE_CYCLES;
 
+#ifndef USE_GUI
     		printf("Frames: %lu\r\n", frames);
     		printf("Syncs to idle: %lu\r\n", syncs);
     		for (int i = 0; i < sizeof(channels_cycles)/sizeof(channels_cycles.channel1); i++) { // Would want the compiler to decompose/unfold this loop
     			printf("Channel %d: %lu\r\n", i+1, channels_cycles.channels[i]);
     		}
     		print("\r\n");
+#else
+
+
+    		/*uart_packet_t packet;
+    		packet.START = 'S';
+    		packet.relocks = syncs;
+    		packet.captures = frames;
+    		packet.channels = channels_cycles;
+
+    		for (int i = 0; i < sizeof(packet); i++)
+    			XUartPs_SendByte(STDOUT_BASEADDRESS, packet.raw[i]);*/
+    		printf("%lu, %lu, %lu, %lu, %lu, %lu, %lu, %lu\r\n", syncs, frames, channels_cycles.channel1, channels_cycles.channel2, channels_cycles.channel3, channels_cycles.channel4, channels_cycles.channel5);
+#endif
+
     		break;
     	}
     	case MODE_SOFTWARE_RECORD:
